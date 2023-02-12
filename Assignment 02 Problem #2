@@ -1,0 +1,42 @@
+//Lab 3.25
+
+/*This program asks the user for a specific year and determines whether that year is a leap year or not. For century years, only
+years divisible by 400 are leap years, and for non-century years, years divisible by 4 are leap years.*/
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int year;
+    //User inputting year number
+    cout << "Please enter a year" << endl;
+    cin >> year;
+    if(year % 100 == 0)
+    {
+        //Only century years divisible by 400 are leap years
+        if(year % 400 == 0)
+        {
+            cout << year << " - leap year";
+        }
+        else
+        {
+            cout << year << " - not a leap year";
+        }
+    }
+    else
+    {
+        //For non-century years, only years divisible by 4 are leap years
+        if(year % 4 == 0)
+        {
+            cout << year << " - leap year";
+        }
+        else
+        {
+            cout << year << " - not a leap year";
+        }
+    }
+    
+    return 0;
+}
