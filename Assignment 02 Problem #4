@@ -1,0 +1,42 @@
+//Lab 4.15
+
+/*This program asks the user for a series of integers followed by a -1 and outputs the sum of these integers and the average of these
+integers to the hundreths place (a precision of 2)*/
+
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int num;
+    int max = 0;
+    int total = 0;
+    int count = 0;
+    double average;
+    //User inputting the numbers for the calculations and num storing the fist integer entered by the user
+    cout << "Please enter a series of integers" << endl;
+    cin >> num;
+    //Loop will run until the value -1
+    while(num >= 0)
+    {
+        /*Total will add each integer while count will store the number of
+        integers that have been added to total*/
+        total += num;
+        count++;
+        /*The value of max will change if the next integer is greater than the
+        integer currently stored in max*/
+        if(num > max)
+        {
+            max = num;
+        }
+        //Num has now stored the next integer
+        cin >> num;
+    }
+    //Average will store the average calculated by diving total by count
+    average = total / (double)(count);
+    cout << max << " ";
+    cout << fixed << setprecision(2) << average << endl;
+    return 0;
+}
