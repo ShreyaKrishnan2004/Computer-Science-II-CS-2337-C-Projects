@@ -1,0 +1,54 @@
+//Lab 3.23
+
+/*When numbering highways, highways with values greater than 100 are considered auxiliary highways while highways with values less than
+100 are considered primary highways. Highways with highway numbers that are odd run from north to south, and highways with highway numbers
+that are even run from east to west. This program asks the user for a highway number and determines whether that highway is a valid highway
+number (highways are not allowed to end in 00) and whether the highways are primary or auxiliary and run from north to south or from east
+to west.*/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int highwayNum;
+	//User inputting the highway number
+    cout << "Please enter a highway number" << endl;
+	cin >> highwayNum;
+	//Highways ending in 00 aren't valid
+	if(highwayNum % 100 == 0 || highwayNum > 999)
+	{
+		cout << highwayNum << " is not a valid interstate highway number.";
+	}
+	//Auxiliary highways have values greater than 100 (technically 99 since 100 isn't a valid highway number)
+	else if(highwayNum > 100)
+	{
+	    //serviceNum stores the highway number of the primary highway this auxiliary highway services
+	    int serviceNum = highwayNum % 100;
+	    //Odd numbered highway run from north to south
+	    if(serviceNum % 2 == 1)
+	    {
+	        cout << "I-" << highwayNum << " is auxiliary, serving I-" << serviceNum << ", going north/south.";
+	    }
+	    //Even numbered highways run from east to west
+	    else
+	    {
+	        cout << "I-" << highwayNum << " is auxiliary, serving I-" << serviceNum << ", going east/west.";
+	    }
+	}
+	//Primary highways have value less than 100
+	else
+	{
+	    //Odd numbered highway run from north to south
+	    if(highwayNum % 2 == 1)
+	    {
+	        cout << "I-" << highwayNum << " is primary, going north/south.";
+	    }
+	    //Even numbered highways run from east to west
+	    else
+	    {
+	        cout << "I-" << highwayNum << " is primary, going east/west.";
+	    }
+	}
+	return 0;
+}
