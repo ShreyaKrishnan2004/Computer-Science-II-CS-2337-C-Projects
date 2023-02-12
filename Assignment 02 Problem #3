@@ -1,0 +1,33 @@
+//Lab 4.14
+
+//This program asks the user for a base 10 number and will print out the reverse of its binary equivalence
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int num;
+    int binNum = 0;
+    //User inputting the number that will be converted to reverse binary
+    cout << "Please enter a positive number" << endl;
+    cin >> num;
+    //The binary value for 0 is just 0 (including 0 inside the while loop would make the loop run infinitely)
+    if(num == 0)
+    {
+        cout << 0;
+    }
+    /*Every digit of binary represents a power of two, so finding the remainder between
+    the number and 2, then dividing the number by two until it's 0 will output the amount
+    of powers of 2 (2, 4, 8, 16) are in the number in reverse*/
+    while(num > 0)
+    {
+        binNum = num % 2;
+        num /= 2;
+        cout << binNum;
+    }
+    cout << endl;
+    return 0;
+}
