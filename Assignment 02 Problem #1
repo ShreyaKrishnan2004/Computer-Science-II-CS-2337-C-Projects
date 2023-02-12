@@ -5,6 +5,7 @@
 that are even run from east to west. This program asks the user for a highway number and determines whether that highway is a valid highway
 number (highways are not allowed to end in 00) and whether the highways are primary or auxiliary and run from north to south or from east
 to west.*/
+
 #include <iostream>
 
 using namespace std;
